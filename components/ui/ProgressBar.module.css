@@ -1,0 +1,88 @@
+.wrapper {
+    width: 100%;
+}
+
+.labelRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.value {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* Track sizes */
+.track {
+    width: 100%;
+    background: var(--border);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.sm {
+    height: 4px;
+}
+
+.md {
+    height: 8px;
+}
+
+.lg {
+    height: 12px;
+}
+
+/* Fill */
+.fill {
+    height: 100%;
+    border-radius: 9999px;
+    width: 0%;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.fill.animated::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: sheen 2s ease-in-out infinite;
+}
+
+@keyframes sheen {
+    0% {
+        transform: translateX(-60px);
+    }
+
+    100% {
+        transform: translateX(60px);
+    }
+}
+
+/* Color variants */
+.low {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.medium {
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+
+.high {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}

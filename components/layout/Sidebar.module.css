@@ -1,0 +1,126 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--navbar-h);
+    bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 12px;
+    z-index: 90;
+    overflow-y: auto;
+    transition: background var(--transition-slow), border-color var(--transition-slow);
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sectionLabel {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 0 12px;
+    margin-bottom: 6px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.navItem:hover {
+    background: var(--surface-hover);
+    color: var(--text);
+    transform: translateX(2px);
+}
+
+.navItem.active {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .navItem.active {
+    background: rgba(129, 140, 248, 0.15);
+}
+
+.navIcon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navLabel {
+    flex: 1;
+}
+
+/* Pro card */
+.proCard {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(6, 182, 212, 0.12));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.proIcon {
+    font-size: 22px;
+}
+
+.proTitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.proSub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 1px;
+}
+
+.proBtn {
+    width: 100%;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.proBtn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
